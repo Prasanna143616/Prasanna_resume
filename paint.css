@@ -1,0 +1,226 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Default font for content */
+    background: #222;
+    color: #fff;
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(20, 20, 20, 0.9);
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.navbar button {
+    background-color: #00bcd4;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar button:hover {
+    background-color: #0097a7;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Container for Scroll Snapping */
+.container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.section {
+    scroll-snap-align: start;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Section Backgrounds with Gradient */
+.about {
+    background: linear-gradient(45deg, #1a1a1a, #00bcd4);
+    animation: fadeInAbout 1s ease-out;
+}
+
+.skills {
+    background: linear-gradient(45deg, #2a2a2a, #8bc34a);
+    animation: fadeInSkills 1.2s ease-out;
+}
+
+.education {
+    background: linear-gradient(45deg, #333, #ff9800);
+    animation: fadeInEducation 1.4s ease-out;
+}
+
+.workshop {
+    background: linear-gradient(45deg, #333, #ff5722);
+    animation: fadeInWorkshop 1.6s ease-out;
+}
+
+.certificates {
+    background: linear-gradient(45deg, #333, #9c27b0);
+    animation: fadeInCertificates 1.8s ease-out;
+}
+
+.contact {
+    background: linear-gradient(45deg, #333, #7e7e62a8);
+    animation: fadeInContact 2s ease-out;
+}
+
+/* Rotating background effect */
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.7));
+    animation: rotateGradient 10s infinite linear;
+    z-index: -1;
+}
+
+@keyframes rotateGradient {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Word Animation for Headings */
+.heading {
+    display: inline-block;
+    font-size: 3.5em;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif; /* Font for headings */
+    animation: wordAnimation 1.5s ease-out forwards;
+}
+
+@keyframes wordAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-in Animations for Sections */
+@keyframes fadeInAbout {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInSkills {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInEducation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInWorkshop {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInCertificates {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInContact {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Styling the Paragraphs and Buttons */
+p {
+    font-size: 1.3em;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.btn {
+    margin-top: 20px;
+    background-color: #00bcd4;
+    color: #000000;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Circular Profile Photo */
+.images-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.image {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.image:hover {
+    transform: scale(1.1);
+}
